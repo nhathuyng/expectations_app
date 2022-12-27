@@ -17,6 +17,8 @@ jobs:
           POSTGRES_DB: data_quality
           POSTGRES_USER: huy
           POSTGRES_PASSWORD: password
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
         ports:
           - 5432:5432
         # Set health checks to wait until postgres has started
