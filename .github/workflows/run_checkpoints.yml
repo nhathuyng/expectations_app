@@ -14,7 +14,7 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: pg_local
+          POSTGRES_DB: data_quality
           POSTGRES_USER: huy
           POSTGRES_PASSWORD: password
         ports:
