@@ -17,12 +17,12 @@ jobs:
       postgres:
         image: postgres:latest
 
-    env:
-      POSTGRES_USER: huy
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: data_quality
-    ports:
-      - '5432:5432'
+        env:
+          POSTGRES_USER: huy
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: data_quality
+        ports:
+          - '5432:5432'
     steps:
       - uses: actions/checkout@v2
       - name: Connect to local PostgreSQL database
