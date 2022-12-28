@@ -1,23 +1,28 @@
 name: Connect to local PostgreSQL database
 
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 env:
   PGPASSWORD: password
 
-services:
-  postgres:
-    image: postgres:latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+
     env:
       POSTGRES_USER: huy
       POSTGRES_PASSWORD: password
       POSTGRES_DB: data_quality
     ports:
       - '5432:5432'
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Connect to local PostgreSQL database
