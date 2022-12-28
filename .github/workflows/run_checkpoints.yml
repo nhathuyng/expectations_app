@@ -20,8 +20,6 @@ jobs:
           POSTGRES_DB: data_quality
           POSTGRES_USER: huy
           POSTGRES_PASSWORD: password
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: 5432
         ports:
           - 5432:5432
         # Set health checks to wait until postgres has started
@@ -43,7 +41,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: Connect to PostgreSQL
-        run: psql -h localhost -p 5432 -U huy -d data_quality -c "\dn"
+        run: |
+          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA app TO huy;"
+          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA app TO huy;"
+          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA app TO huy;"
+          psql -h localhost -p 5432 -U huy -d data_quality -c "\dn"
 
       - name: Run Checkpoint
         run: |
