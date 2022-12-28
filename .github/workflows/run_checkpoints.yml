@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+env:
+  PGPASSWORD: password
+
 jobs:
   great_expectations_validation:
     runs-on: ubuntu-latest
