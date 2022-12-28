@@ -39,6 +39,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Connect to PostgreSQL
+        run: node client.js
+
       - name: Run Checkpoint
         run: |
           python great_expectations/checkpoints/run_customer.py
