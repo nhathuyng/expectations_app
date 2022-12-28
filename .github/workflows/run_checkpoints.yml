@@ -1,4 +1,4 @@
-name: run-github-stats-checkpoint
+name: run_GE_checkpoints
 
 on:
   workflow_dispatch:
@@ -42,9 +42,7 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
-          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA app TO huy;"
-          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA app TO huy;"
-          psql -h localhost -p 5432 -U huy -d data_quality -c "GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA app TO huy;"
+          sudo apt-get install -y postgresql-client
           psql -h localhost -p 5432 -U huy -d data_quality -c "\dn"
 
       - name: Run Checkpoint
