@@ -17,8 +17,8 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_DB: data_quality
-          POSTGRES_USER: huy
+          POSTGRES_DB: ge_db
+          POSTGRES_USER: user
           POSTGRES_PASSWORD: password
         ports:
           - 5432:5432
@@ -42,7 +42,7 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
-          psql -h postgres -p 5432 -U huy -d data_quality -c "\dn"
+          psql -h 127.0.0.1 -p 5432 -U user -d ge_db -c "\dn"
 
       - name: Run Checkpoint
         run: |
