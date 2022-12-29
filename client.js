@@ -3,19 +3,18 @@ const { Client } = require('pg');
 const pgclient = new Client({
 	host: process.env.POSTGRES_HOST,
 	port: process.env.POSTGRES_PORT,
-	user: 'huy',
+	user: 'user',
 	password: 'password',
-	database: 'data_quality',
+	database: 'postgres_db',
 });
 
 pgclient.connect();
 
 const schema = 'CREATE SCHEMA app';
 
-const table =
-	'CREATE TABLE app.customer (id SERIAL PRIMARY KEY, firstName VARCHAR(40) NOT NULL, lastName VARCHAR(40) NOT NULL, age INT, address VARCHAR(80), email VARCHAR(40))';
-const text = 'INSERT INTO app.customer(firstname, lastname, age, address, email) VALUES($1, $2, $3, $4, $5) RETURNING *';
-const values = ['Mona the', 'Octocat', 9, '88 Colin P Kelly Jr St, San Francisco, CA 94107, United States', 'octocat@github.com'];
+const table = 'CREATE TABLE app.customer (customer_id VARCHAR(10), order_id VARCHAR(10), email VARCHAR(40), address VARCHAR(80))';
+const text = 'INSERT INTO app.customer(customer_id, order_id, email, address) VALUES($1, $2, $3, $4) RETURNING *';
+const values = ['1', '1', 'khan@gmail.com', '88 Colin P Kelly Jr St, San Francisco, CA 94107, United States'];
 
 pgclient.query(schema, (err, res) => {
 	if (err) throw err;

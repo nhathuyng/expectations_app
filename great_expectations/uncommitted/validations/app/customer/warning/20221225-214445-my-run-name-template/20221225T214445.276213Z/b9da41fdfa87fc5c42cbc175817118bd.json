@@ -1,0 +1,498 @@
+{
+  "evaluation_parameters": {},
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {},
+      "data_asset_name": "app.customer",
+      "data_connector_name": "default_inferred_data_connector_name",
+      "datasource_name": "expectations_app"
+    },
+    "batch_markers": {
+      "ge_load_time": "20221225T204445.299397Z"
+    },
+    "batch_spec": {
+      "batch_identifiers": {},
+      "data_asset_name": "app.customer",
+      "data_asset_name_prefix": "",
+      "data_asset_name_suffix": "",
+      "include_schema_name": true,
+      "schema_name": "app",
+      "table_name": "customer",
+      "type": "table"
+    },
+    "checkpoint_id": null,
+    "checkpoint_name": "customer",
+    "expectation_suite_name": "app.customer.warning",
+    "great_expectations_version": "0.15.41",
+    "run_id": {
+      "run_name": "20221225-214445-my-run-name-template",
+      "run_time": "2022-12-25T21:44:45.276213+00:00"
+    },
+    "validation_id": null,
+    "validation_time": "20221225T204445.313829Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_row_count_to_be_between",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "max_value": 2,
+          "min_value": 2
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {},
+              "metric_name": "table.row_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 2
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_table_columns_to_match_set",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column_set": [
+            "adress",
+            "email",
+            "customer_id",
+            "order_id"
+          ],
+          "exact_match": null
+        },
+        "meta": {
+          "profiler_details": {
+            "success_ratio": 1.0
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": [
+          "customer_id",
+          "order_id",
+          "email",
+          "adress"
+        ]
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "email"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "email"
+              },
+              "metric_name": "column_values.unique.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_rows": []
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "email"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "email"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_rows": null
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "email",
+          "mostly": 1.0,
+          "value_set": [
+            "kilos@gmail.com",
+            "hanny@gmail.com"
+          ]
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "email"
+              },
+              "metric_name": "column.distinct_values",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1,
+            "parse_strings_as_datetimes": false
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_rows": []
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "email",
+          "max_value": 2,
+          "min_value": 2,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "email"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 2
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "email",
+          "max_value": 1.0,
+          "min_value": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "email"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 1.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_unique",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "adress"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "adress"
+              },
+              "metric_name": "column_values.unique.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_rows": []
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_not_be_null",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "adress"
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "adress"
+              },
+              "metric_name": "column_values.nonnull.unexpected_count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_rows": null
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_values_to_be_in_set",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "adress",
+          "mostly": 1.0,
+          "value_set": [
+            "Washington Alley 132",
+            "Downtown 120"
+          ]
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "adress"
+              },
+              "metric_name": "column.distinct_values",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1,
+            "parse_strings_as_datetimes": false
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "element_count": 2,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_list": [],
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_rows": []
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_unique_value_count_to_be_between",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "adress",
+          "max_value": 2,
+          "min_value": 2,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "adress"
+              },
+              "metric_name": "column.distinct_values.count",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 2
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+        "kwargs": {
+          "batch_id": "b9da41fdfa87fc5c42cbc175817118bd",
+          "column": "adress",
+          "max_value": 1.0,
+          "min_value": 1.0,
+          "strict_max": false,
+          "strict_min": false
+        },
+        "meta": {
+          "profiler_details": {
+            "metric_configuration": {
+              "domain_kwargs": {
+                "column": "adress"
+              },
+              "metric_name": "column.unique_proportion",
+              "metric_value_kwargs": null
+            },
+            "num_batches": 1
+          }
+        }
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 1.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 12,
+    "success_percent": 100.0,
+    "successful_expectations": 12,
+    "unsuccessful_expectations": 0
+  },
+  "success": true
+}
