@@ -43,6 +43,7 @@ jobs:
 
       - name: Connect to PostgreSQL
         run: |
+          node client.js
           psql -h localhost -p 5432 -U user -d postgres_db -c "\dn"
       - name: Run Checkpoint
         run: |
