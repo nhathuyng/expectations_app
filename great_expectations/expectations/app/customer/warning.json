@@ -1,258 +1,247 @@
 {
-  "data_asset_type": null,
-  "expectation_suite_name": "app.customer.warning",
-  "expectations": [
-    {
-      "expectation_type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "max_value": 2,
-        "min_value": 2
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {},
-            "metric_name": "table.row_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_table_columns_to_match_set",
-      "kwargs": {
-        "column_set": [
-          "adress",
-          "email",
-          "customer_id",
-          "order_id"
-        ],
-        "exact_match": null
-      },
-      "meta": {
-        "profiler_details": {
-          "success_ratio": 1.0
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_unique",
-      "kwargs": {
-        "column": "email"
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "email"
-            },
-            "metric_name": "column_values.unique.unexpected_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_unique",
-      "kwargs": {
-        "column": "adress"
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "adress"
-            },
-            "metric_name": "column_values.unique.unexpected_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "email"
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "email"
-            },
-            "metric_name": "column_values.nonnull.unexpected_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "adress"
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "adress"
-            },
-            "metric_name": "column_values.nonnull.unexpected_count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_in_set",
-      "kwargs": {
-        "column": "email",
-        "mostly": 1.0,
-        "value_set": [
-          "kilos@gmail.com",
-          "hanny@gmail.com"
-        ]
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "email"
-            },
-            "metric_name": "column.distinct_values",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1,
-          "parse_strings_as_datetimes": false
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_unique_value_count_to_be_between",
-      "kwargs": {
-        "column": "email",
-        "max_value": 2,
-        "min_value": 2,
-        "strict_max": false,
-        "strict_min": false
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "email"
-            },
-            "metric_name": "column.distinct_values.count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
-      "kwargs": {
-        "column": "email",
-        "max_value": 1.0,
-        "min_value": 1.0,
-        "strict_max": false,
-        "strict_min": false
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "email"
-            },
-            "metric_name": "column.unique_proportion",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_in_set",
-      "kwargs": {
-        "column": "adress",
-        "mostly": 1.0,
-        "value_set": [
-          "Washington Alley 132",
-          "Downtown 120"
-        ]
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "adress"
-            },
-            "metric_name": "column.distinct_values",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1,
-          "parse_strings_as_datetimes": false
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_unique_value_count_to_be_between",
-      "kwargs": {
-        "column": "adress",
-        "max_value": 2,
-        "min_value": 2,
-        "strict_max": false,
-        "strict_min": false
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "adress"
-            },
-            "metric_name": "column.distinct_values.count",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
-      "kwargs": {
-        "column": "adress",
-        "max_value": 1.0,
-        "min_value": 1.0,
-        "strict_max": false,
-        "strict_min": false
-      },
-      "meta": {
-        "profiler_details": {
-          "metric_configuration": {
-            "domain_kwargs": {
-              "column": "adress"
-            },
-            "metric_name": "column.unique_proportion",
-            "metric_value_kwargs": null
-          },
-          "num_batches": 1
-        }
-      }
-    }
-  ],
-  "ge_cloud_id": null,
-  "meta": {
-    "citations": [
-      {
-        "citation_date": "2022-12-25T20:18:48.219664Z",
-        "comment": "Created by effective Rule-Based Profiler of OnboardingDataAssistant with the configuration included.\n"
-      }
-    ],
-    "great_expectations_version": "0.15.41"
-  }
+	"data_asset_type": null,
+	"expectation_suite_name": "app.customer.warning",
+	"expectations": [
+		{
+			"expectation_type": "expect_table_row_count_to_be_between",
+			"kwargs": {
+				"max_value": 2,
+				"min_value": 2
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {},
+						"metric_name": "table.row_count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_table_columns_to_match_set",
+			"kwargs": {
+				"column_set": ["address", "email", "customer_id", "order_id"],
+				"exact_match": null
+			},
+			"meta": {
+				"profiler_details": {
+					"success_ratio": 1.0
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_be_unique",
+			"kwargs": {
+				"column": "email"
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "email"
+						},
+						"metric_name": "column_values.unique.unexpected_count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_be_unique",
+			"kwargs": {
+				"column": "address"
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "address"
+						},
+						"metric_name": "column_values.unique.unexpected_count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_not_be_null",
+			"kwargs": {
+				"column": "email"
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "email"
+						},
+						"metric_name": "column_values.nonnull.unexpected_count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_not_be_null",
+			"kwargs": {
+				"column": "address"
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "address"
+						},
+						"metric_name": "column_values.nonnull.unexpected_count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_be_in_set",
+			"kwargs": {
+				"column": "email",
+				"mostly": 1.0,
+				"value_set": ["kilos@gmail.com", "hanny@gmail.com"]
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "email"
+						},
+						"metric_name": "column.distinct_values",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1,
+					"parse_strings_as_datetimes": false
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_unique_value_count_to_be_between",
+			"kwargs": {
+				"column": "email",
+				"max_value": 2,
+				"min_value": 2,
+				"strict_max": false,
+				"strict_min": false
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "email"
+						},
+						"metric_name": "column.distinct_values.count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+			"kwargs": {
+				"column": "email",
+				"max_value": 1.0,
+				"min_value": 1.0,
+				"strict_max": false,
+				"strict_min": false
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "email"
+						},
+						"metric_name": "column.unique_proportion",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_values_to_be_in_set",
+			"kwargs": {
+				"column": "adress",
+				"mostly": 1.0,
+				"value_set": ["Washington Alley 132", "Downtown 120"]
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "adress"
+						},
+						"metric_name": "column.distinct_values",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1,
+					"parse_strings_as_datetimes": false
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_unique_value_count_to_be_between",
+			"kwargs": {
+				"column": "address",
+				"max_value": 2,
+				"min_value": 2,
+				"strict_max": false,
+				"strict_min": false
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "address"
+						},
+						"metric_name": "column.distinct_values.count",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		},
+		{
+			"expectation_type": "expect_column_proportion_of_unique_values_to_be_between",
+			"kwargs": {
+				"column": "address",
+				"max_value": 1.0,
+				"min_value": 1.0,
+				"strict_max": false,
+				"strict_min": false
+			},
+			"meta": {
+				"profiler_details": {
+					"metric_configuration": {
+						"domain_kwargs": {
+							"column": "address"
+						},
+						"metric_name": "column.unique_proportion",
+						"metric_value_kwargs": null
+					},
+					"num_batches": 1
+				}
+			}
+		}
+	],
+	"ge_cloud_id": null,
+	"meta": {
+		"citations": [
+			{
+				"citation_date": "2022-12-25T20:18:48.219664Z",
+				"comment": "Created by effective Rule-Based Profiler of OnboardingDataAssistant with the configuration included.\n"
+			}
+		],
+		"great_expectations_version": "0.15.41"
+	}
 }

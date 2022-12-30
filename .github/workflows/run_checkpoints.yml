@@ -48,3 +48,5 @@ jobs:
       - name: Run Checkpoint
         run: |
           great_expectations checkpoint run customer
+      - name: check for changes
+        run: git status
