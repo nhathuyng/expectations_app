@@ -47,4 +47,4 @@ jobs:
           psql -h localhost -p 5432 -U huy -d data_quality -c "SELECT * from app.customer"
       - name: Run Checkpoint
         run: |
-          python great_expectations/checkpoints/run_customer.py
+          great_expectations checkpoint run customer
