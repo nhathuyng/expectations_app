@@ -5,8 +5,8 @@
 		{
 			"expectation_type": "expect_table_row_count_to_be_between",
 			"kwargs": {
-				"max_value": 2,
-				"min_value": 2
+				"max_value": 1,
+				"min_value": 1
 			},
 			"meta": {
 				"profiler_details": {
@@ -108,7 +108,7 @@
 			"kwargs": {
 				"column": "email",
 				"mostly": 1.0,
-				"value_set": ["kilos@gmail.com", "hanny@gmail.com"]
+				"value_set": ["khan@gmail.com"]
 			},
 			"meta": {
 				"profiler_details": {
@@ -128,8 +128,8 @@
 			"expectation_type": "expect_column_unique_value_count_to_be_between",
 			"kwargs": {
 				"column": "email",
-				"max_value": 2,
-				"min_value": 2,
+				"max_value": 1,
+				"min_value": 1,
 				"strict_max": false,
 				"strict_min": false
 			},
@@ -173,7 +173,7 @@
 			"kwargs": {
 				"column": "adress",
 				"mostly": 1.0,
-				"value_set": ["Washington Alley 132", "Downtown 120"]
+				"value_set": ["88 Colin P Kelly Jr St, San Francisco, CA 94107, United States"]
 			},
 			"meta": {
 				"profiler_details": {
@@ -193,8 +193,8 @@
 			"expectation_type": "expect_column_unique_value_count_to_be_between",
 			"kwargs": {
 				"column": "address",
-				"max_value": 2,
-				"min_value": 2,
+				"max_value": 1,
+				"min_value": 1,
 				"strict_max": false,
 				"strict_min": false
 			},
