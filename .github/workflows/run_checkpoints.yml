@@ -45,8 +45,14 @@ jobs:
         run: |
           node client.js
           psql -h localhost -p 5432 -U huy -d data_quality -c "SELECT * from app.customer"
+
       - name: Run Checkpoint
         run: |
           great_expectations checkpoint run customer
-      - name: check for changes
-        run: git status
+
+      - name: push changes to repo
+        run: |
+          git status
+          git add .
+          git commit -m "new validation"
+          git push
