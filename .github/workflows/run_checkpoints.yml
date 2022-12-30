@@ -50,6 +50,11 @@ jobs:
         run: |
           great_expectations checkpoint run customer
 
+      - name: identify author
+        run: |
+          git config --global user.email "nhathuynguyencc@gmail.com"
+          git config --global user.name "nhathuyng"
+
       - name: push changes to repo
         run: |
           git status
